@@ -59,6 +59,7 @@ while(True):
             print(f"Great, you got all the questions correct for multiplication of {pickedNumber}. Show it to your grownups.")
         else:
             print(f"You got {score} questions right. Let us try again.")
+            input("Press Enter when you are ready for the quizes.")
 
     
 
