@@ -15,7 +15,9 @@ def giveMultiplicationQuizes(pickedNumber):
     for i in range(1,13):
         numberList.append(i)
 
-    for i in random.shuffle(numberList):
+    random.shuffle(numberList)
+
+    for i in numberList:
         while(True):
            
             try:
