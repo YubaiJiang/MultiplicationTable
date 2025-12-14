@@ -48,14 +48,17 @@ while(True):
         try:
             pickedNumber = int(input("Pick a number between 1 and 12 to learn: "))
         except:
-            print("Thats not a number.")
+            print("That's not a number.")
             continue
 
     print(f"Ok, let us learn the multipication of {pickedNumber}.")
     printMultiplicationColumn(pickedNumber)
 
-    input("Press Enter when you are ready for the quizes.")
-    
+    userInput = input("Press Enter when you are ready for the quizes, type [back] to choose another number, or type [exit] to quit. ")
+    if "exit" in userInput.lower():
+        sys.exit()
+    if "back" in userInput.lower():
+        continue
 
     score = 0
     while(score != 12):
@@ -65,7 +68,7 @@ while(True):
            
         else:
             print(f"You got {score} questions right. Let us try again.")
-        userInput = input("Press Enter to continue, or type [exit] to quit.")
+        userInput = input("Press Enter to continue, or type [exit] to quit. ")
         if "exit" in userInput.lower():
             sys.exit()
 
