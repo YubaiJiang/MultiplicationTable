@@ -10,7 +10,7 @@ def printMultiplicationColumn(pickedNumber):
 def giveMultiplicationQuizes(pickedNumber):
     os.system('cls' if os.name == 'nt' else 'clear')
     score = 0
-    for i in random.shuffle(range(1, 13)):
+    for i in random.shuffle(list(range(1, 13))):
         while(True):
            
             try:
