@@ -1,5 +1,6 @@
 import random
 import os
+import sys
 
 
 
@@ -60,10 +61,13 @@ while(True):
     while(score != 12):
         score = giveMultiplicationQuizes(pickedNumber)
         if score == 12:
-            print(f"Great, you got all the questions correct for multiplication of {pickedNumber}. Show it to your grownups.")
+            print(f"Great job, you got all the questions correct for multiplication of {pickedNumber}. Show it to your grownups.")
+           
         else:
             print(f"You got {score} questions right. Let us try again.")
-            input("Press Enter when you are ready for the quizes.")
+        userInput = input("Press Enter to continue, or type [exit] to quit.")
+        if "exit" in userInput.lower():
+            sys.exit()
 
     
 
