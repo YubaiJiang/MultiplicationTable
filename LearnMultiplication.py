@@ -44,7 +44,11 @@ print(f"Hello {childName}, let's learn multiplication table.")
 while(True):
     pickedNumber = -1
     while pickedNumber not in range(1, 13):
-        pickedNumber = int(input("Pick a number between 1 and 12 to learn: "))
+        try:
+            pickedNumber = int(input("Pick a number between 1 and 12 to learn: "))
+        except:
+            print("Thats not a number.")
+            continue
 
     print(f"Ok, let us learn the multipication of {pickedNumber}.")
     printMultiplicationColumn(pickedNumber)
