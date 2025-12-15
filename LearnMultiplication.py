@@ -39,7 +39,7 @@ def giveMultiplicationQuizes(pickedNumber):
                 print("Invalid input! Try entre a number.")
                 continue
     
-    if mistakes.len() > 0:
+    if len(mistakes) > 0:
         print("You got these questions wrong, please review the answers.")
         for j in mistakes:
             print(f"{i} X {j} = {i*j}")
