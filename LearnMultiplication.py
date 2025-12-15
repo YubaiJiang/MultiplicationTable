@@ -17,6 +17,7 @@ def giveMultiplicationQuizes(pickedNumber):
         numberList.append(i)
 
     random.shuffle(numberList)
+    mistakes = list()
 
     for i in numberList:
         while(True):
@@ -30,12 +31,18 @@ def giveMultiplicationQuizes(pickedNumber):
                     print("Wrong answer. Sorry.")
                     print(f"{pickedNumber} X {i} = {pickedNumber*i}")
                     print("Try to memorise it, and you will be tested later again.")
+                    mistakes.append(i)
                 break
 
             except ValueError:
                 # Handle non-integer input
                 print("Invalid input! Try entre a number.")
                 continue
+    
+    if mistakes.len() > 0:
+        print("You got these questions wrong, please review the answers.")
+        for j in mistakes:
+            print(f"{i} X {j} = {i*j}")
     return score
     
 
@@ -68,8 +75,6 @@ while(True):
            
         else:
             print(f"You got {score} questions right. Let us try again.")
-            print(f"let's review the multiplication of {pickedNumber}")
-            printMultiplicationColumn(pickedNumber)
         userInput = input("Press Enter to continue, [back] to pick another number, or type [exit] to quit. ")
         if "back" in userInput:
             break
