@@ -68,9 +68,14 @@ while(True):
            
         else:
             print(f"You got {score} questions right. Let us try again.")
-        userInput = input("Press Enter to continue, or type [exit] to quit. ")
+            print(f"let's review the multiplication of {pickedNumber}")
+            printMultiplicationColumn(pickedNumber)
+        userInput = input("Press Enter to continue, [back] to pick another number, or type [exit] to quit. ")
+        if "back" in userInput:
+            break
         if "exit" in userInput.lower():
             sys.exit()
+        
 
     
 
