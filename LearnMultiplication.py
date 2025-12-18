@@ -3,9 +3,11 @@ import os
 import sys
 
 
+SIZE = 9
+
 
 def printMultiplicationColumn(pickedNumber):
-    for i in range(1, 13):
+    for i in range(1, SIZE + 1):
         print(f"{pickedNumber} x {i} = {pickedNumber*i}")
 
 def giveMultiplicationQuizes(pickedNumber):
@@ -13,7 +15,7 @@ def giveMultiplicationQuizes(pickedNumber):
     score = 0
 
     numberList = list()
-    for i in range(1,13):
+    for i in range(1,SIZE + 1):
         numberList.append(i)
 
     random.shuffle(numberList)
@@ -42,7 +44,7 @@ def giveMultiplicationQuizes(pickedNumber):
     if len(mistakes) > 0:
         print("You got these questions wrong, please review the answers.")
         for j in mistakes:
-            print(f"{i} X {j} = {i*j}")
+            print(f"{pickedNumber} X {j} = {pickedNumber*j}")
     return score
     
 
@@ -53,7 +55,7 @@ while(True):
     pickedNumber = -1
     while pickedNumber not in range(1, 13):
         try:
-            pickedNumber = int(input("Pick a number between 1 and 12 to learn: "))
+            pickedNumber = int(input(f"Pick a number between 1 and {SIZE} to learn: "))
         except:
             print("That's not a number.")
             continue
@@ -68,9 +70,9 @@ while(True):
         continue
 
     score = 0
-    while(score != 12):
+    while(score != SIZE):
         score = giveMultiplicationQuizes(pickedNumber)
-        if score == 12:
+        if score == SIZE:
             print(f"Great job, you got all the questions correct for multiplication of {pickedNumber}. Show it to your grownups.")
            
         else:
