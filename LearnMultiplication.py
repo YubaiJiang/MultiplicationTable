@@ -6,7 +6,7 @@ import sys
 SIZE = 9
 
 if len(sys.argv) > 1:
-    SIZE = sys.argv[1]
+    SIZE = int(sys.argv[1])
 
 
 def printMultiplicationColumn(pickedNumber):
