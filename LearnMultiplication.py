@@ -5,6 +5,9 @@ import sys
 
 SIZE = 9
 
+if len(sys.argv) > 1:
+    SIZE = sys.argv[1]
+
 
 def printMultiplicationColumn(pickedNumber):
     for i in range(1, SIZE + 1):
